@@ -28,8 +28,6 @@ export const projects: Project[] = [
       { icon: SiMeta, name: "Meta Graph API"},
       { icon: GroqIcon , name: "Groq" },
     ],
-    github: "https://github.com/yourusername/socialsphere",
-    demo: "https://socialsphere.example.com",
     video: "https://www.youtube.com/embed/jqyvy7Xofgg?si=dxfe8QIofUoxK5Qt",
     screenshots: [
       "SocialSphere/SocialSphere (1).png",
@@ -63,8 +61,6 @@ export const projects: Project[] = [
       { icon: DiSqllite, name: "Sqlite"},
       { icon: SiLanguagetool, name: "Languange Tool API" },
     ],
-    github: "https://github.com/yourusername/prodigi",
-    demo: "https://prodigi.example.com",
     video: "https://www.youtube.com/embed/k55jYfu8d5o?si=nY9yTqov7C9oVjsx",
     screenshots: [
       "ProDigi/Prodigi  (1).png",
@@ -94,8 +90,6 @@ export const projects: Project[] = [
       { icon: SiMysql, name: "MySQL" },
 
     ],
-    github: "https://github.com/yourusername/reflect-daily",
-    demo: "https://reflectdaily.example.com",
     screenshots: [
       "ReflectDaily/ReflectDaily  (1).png",
       "ReflectDaily/ReflectDaily  (2).png",

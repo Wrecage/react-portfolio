@@ -65,7 +65,8 @@ const handleDownload = () => {
     <Element name="home">
       <section
         id="home"
-        className="min-h-screen flex flex-col items-center justify-center py-20 px-6"
+        className="min-h-screen flex flex-col items-center justify-center py-20 px-6
+      bg-[var(--color-background)] text-[var(--color-content)]"
       >
         <motion.div
           className="text-center px-4"
@@ -107,21 +108,21 @@ const handleDownload = () => {
 
           <motion.h1
             variants={fadeInUp}
-            className="text-4xl sm:text-5xl font-extrabold text-gray-900 dark:text-white mb-2"
+            className="text-4xl sm:text-5xl font-extrabold"
           >
             <RepelText
               text="Hi, I'm Trisan Jae"
-              className="text-4xl sm:text-5xl font-extrabold text-gray-900 dark:text-white mb-2"
+              className="text-4xl sm:text-5xl font-extrabold"
             />
           </motion.h1>
 
           <motion.div
             variants={fadeInUp}
-            className="text-lg sm:text-xl text-gray-700 dark:text-gray-300 mb-4"
+            className="text-lg sm:text-xl mb-4"
           >
             <RepelText
               text="Aspiring IT Professional | Web Developer | UI/UX Designer"
-              className="text-lg sm:text-xl text-gray-700 dark:text-gray-300 mb-4"
+              className="text-lg sm:text-xl"
             />
           </motion.div>
 

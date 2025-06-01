@@ -15,7 +15,8 @@ function App() {
     <>
       <ScrollProgress />
       <Router>
-        <div className="bg-gradient-to-br from-blue-100 via-purple-100 to-pink-100 dark:from-gray-900 dark:via-gray-800 dark:to-gray-900 min-h-screen text-gray-900 dark:text-white">
+        <div className="min-h-screen text-[var(--color-content)] bg-[var(--color-background)]
+          border border-[var(--color-muted)] shadow-md dark:shadow-[0_0_30px_#1e29">
           <MorphingBackground />
           <Navbar />
           <main>

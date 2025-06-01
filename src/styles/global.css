@@ -29,3 +29,27 @@ body {
 ::-webkit-scrollbar-thumb:hover {
   background: linear-gradient(to bottom, #db2777, #eab308); /* darker on hover */
 }
+
+@custom-variant dark (&:where(.dark, .dark *)); /* Overrides Tailwind default */
+
+@theme {
+  --color-primary: #6366f1;  /* Indigo 500 */
+  --color-muted: #d8b4fe;    /* Purple 300 */
+  --color-tertiary: #fbcfe8; /* Pink 200 */
+  --color-surface: #ffffff;  /* Pure white */
+  --color-accent: #bfdbfe;   /* Blue 300 */
+  --color-secondary: #f0abfc; /* Fuchsia 300 */
+  --color-content:hsl(223, 13.20%, 10.40%);  /* Slate 800 */
+  --color-background: #eef2ff; /* Soft periwinkle */
+}
+
+.dark {
+  --color-primary: #312e81;  /* Indigo 900 */
+  --color-muted: #F1F5F9;    /* Purple 900 */
+  --color-tertiary: #831843; /* Rose 900 */
+  --color-surface: #1e293b;  /* Slate 800 */
+  --color-accent: #1e40af;   /* Blue 800 */
+  --color-secondary:rgb(209, 197, 35); /* Fuchsia 900 */
+  --color-content: #f1f5f9;  /* Off-white text */
+  --color-background: #0f172a; /* Deep navy */
+}
