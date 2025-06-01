@@ -46,5 +46,5 @@ export const skillItems = [
 
   { name: "Meta Graph API", icon: <SiMeta />, style: { color: "#4267B2" } },
   { name: "LanguageTool API", icon: <SiLanguagetool />, style: { color: "#2C2C2C" } },
-  { name: "Groq API", icon: <img src="src/assets/groq.svg" alt="Groq" className="w-6 h-6" />, style: {} },
+  { name: "Groq API", icon: <img src="groq.svg" alt="Groq" className="w-6 h-6" />, style: {} },
 ];
