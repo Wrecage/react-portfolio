@@ -99,7 +99,7 @@ const handleDownload = () => {
               </Wave>
             </div>
             <img
-              src="/profile.png"
+              src="profile.png"
               alt="Trisan Jae"
               className="relative z-10 w-full h-full object-contain bg-transparent rounded-full"
             />
