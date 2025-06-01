@@ -67,7 +67,7 @@ export default function Projects() {
                       <Badge
                         key={name + i}
                         variant="secondary"
-                        className="flex items-center gap-1 px-2 py-1 rounded-md  text-[#262626] dark:bg-[#262626] dark:text-white"
+                        className="flex items-center gap-1 px-2 py-1 rounded-md bg-[#F5F5F5] text-[#262626] dark:bg-[#262626] dark:text-white"
                       >
                         <motion.div
                           whileHover={{ scale: 1.1 }}
