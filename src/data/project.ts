@@ -88,7 +88,7 @@ export const projects: Project[] = [
     description:
       "A guided self-reflection app featuring inspirational quotes and insightful visual dashboards to track personal growth.",
     techStack: [
-      { icon: SiSpringboot, name: "Srping Boot" },
+      { icon: SiSpringboot, name: "Spring Boot" },
       { icon: SiReact, name: "React" },
       { icon: FaCss3Alt, name: "CSS" },
       { icon: SiMysql, name: "MySQL" },
