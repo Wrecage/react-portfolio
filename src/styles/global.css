@@ -38,7 +38,7 @@ body {
   --color-tertiary: #fbcfe8; /* Pink 200 */
   --color-surface: #ffffff;  /* Pure white */
   --color-accent: #bfdbfe;   /* Blue 300 */
-  --color-secondary: #f0abfc; /* Fuchsia 300 */
+  --color-secondary: #F5F5F5; /* Fuchsia 300 */
   --color-content:hsl(223, 13.20%, 10.40%);  /* Slate 800 */
   --color-background: #eef2ff; /* Soft periwinkle */
 }
