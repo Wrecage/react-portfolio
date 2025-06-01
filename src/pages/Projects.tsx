@@ -52,7 +52,7 @@ export default function Projects() {
 
               <div className="relative z-10 flex flex-col h-full">
                 <div>
-                  <h3 className="text-xl font-bold text-gray-900 dark:text-white group-hover:text-pink-800 transition-colors">
+                  <h3 className=" text-xl font-bold text-gray-900 dark:text-white transition-colors group-hover:text-pink-800 dark:group-hover:text-white">
                     {project.title}
                   </h3>
                   <p className="text-sm text-muted-foreground mb-2">
@@ -67,7 +67,7 @@ export default function Projects() {
                       <Badge
                         key={name + i}
                         variant="secondary"
-                        className="flex items-center gap-1 px-2 py-1 rounded-md text-sm"
+                        className="flex items-center gap-1 px-2 py-1 rounded-md  text-[#262626] dark:bg-[#262626] dark:text-white"
                       >
                         <motion.div
                           whileHover={{ scale: 1.1 }}
