@@ -43,8 +43,8 @@ const iconVariants = {
 
 const socialLinks = [
   { icon: FaFacebookF, url: "https://www.facebook.com/SITHISIT" },
-  { icon: FaLinkedinIn, url: "https://github.com/Wrecage" },
-  { icon: FaGithub, url: "https://www.linkedin.com/in/trisanjae/" },
+  { icon: FaLinkedinIn, url: "https://www.linkedin.com/in/trisanjae/" },
+  { icon: FaGithub, url: "https://github.com/Wrecage" },
 ];
 
 
