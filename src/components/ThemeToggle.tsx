@@ -12,7 +12,7 @@ export default function ThemeToggle() {
         setTimeout(() => {
           document.documentElement.classList.remove("light", "dark");
           document.documentElement.classList.add(theme);
-        }, 100); // Small delay ensures Tailwind updates UI
+        }, 100); 
       }}
       className="
         relative group p-2 rounded-full transition-all duration-300 
