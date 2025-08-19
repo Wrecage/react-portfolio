@@ -132,7 +132,7 @@ const handleDownload = () => {
             className="mt-8 flex justify-center gap-5"
           >
             <motion.a
-              href="https://drive.google.com/file/d/1tdS8OmIbeEdBQRvtikEk9b1Mx-4hT-m9/view?usp=sharing"
+              href="https://drive.google.com/file/d/1qJOWNxgTO3msYZ07NlSS-D5-G7URzRsJ/view?usp=sharing"
               target="_blank"
               rel="noopener noreferrer"
               whileHover={{
