@@ -3,7 +3,7 @@
 import { motion } from "framer-motion"
 import { skillCategories } from "../data/skills"
 import TechCarousel from "../components/TechCarousel"
-import { Code2, Sparkles, Zap, User, Lightbulb, Target } from "lucide-react"
+import { Code2, Sparkles, Zap, Lightbulb, Target } from "lucide-react"
 
 const About = () => {
   const containerVariants = {

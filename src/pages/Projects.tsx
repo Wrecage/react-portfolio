@@ -31,7 +31,6 @@ const CollapsibleSection = ({
   projects,
   isOpen,
   onToggle,
-  gradient,
   setActiveProject,
 }: {
   title: string
@@ -118,14 +117,13 @@ const ProjectCard = ({
   project,
   index,
   setActiveProject,
-  compact = false,
 }: {
   project: Project
   index: number
   setActiveProject: (project: Project) => void
   compact?: boolean
 }) => {
-  const [isHovered, setIsHovered] = useState(false)
+  const [, setIsHovered] = useState(false)
   const cardRef = useRef<HTMLDivElement>(null)
   const isInView = useInView(cardRef, { once: true, amount: 0.3 })
   const [showAllTech, setShowAllTech] = useState(false) 
@@ -327,7 +325,7 @@ export default function Projects() {
     offset: ["start end", "end start"],
   })
 
-  const y = useTransform(scrollYProgress, [0, 1], [100, -100])
+  // const y = useTransform(scrollYProgress, [0, 1], [100, -100])
   const opacity = useTransform(scrollYProgress, [0, 0.2, 0.8, 1], [0, 1, 1, 0])
 
   const { fullStackProjects, uiuxProjects } = categorizeProjects()
