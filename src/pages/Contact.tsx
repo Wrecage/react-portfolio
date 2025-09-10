@@ -128,7 +128,7 @@ const Contact = () => {
               stiffness: 300,
               damping: 15,
             }}
-            className={`bg-blue-600 hover:bg-blue-700 text-white font-semibold py-3 px-6 rounded-lg transition-shadow duration-300 shadow-md ${
+            className={`bg-blue-600 hover:bg-blue-700 text-white font-semibold py-3 px-6 rounded-lg transition-shadow  shadow-md ${
               isSubmitting ? "opacity-60 cursor-not-allowed" : ""
             }`}
           >
@@ -140,7 +140,7 @@ const Contact = () => {
               initial={{ opacity: 0, y: 10 }}
               animate={{ opacity: 1, y: 0 }}
               exit={{ opacity: 0, y: 10 }}
-              className={`mt-2 p-3 text-center rounded-lg text-sm font-medium transition-all duration-300 ${
+              className={`mt-2 p-3 text-center rounded-lg text-sm font-medium   ${
                 formStatus === "success"
                   ? "bg-green-100 text-green-700 dark:bg-green-800 dark:text-green-200"
                   : "bg-red-100 text-red-700 dark:bg-red-800 dark:text-red-200"
@@ -166,7 +166,7 @@ const Contact = () => {
               }}
               whileTap={{ scale: 0.97 }}
               transition={{ type: "spring", stiffness: 300, damping: 15 }}
-              className="inline-block bg-blue-50 dark:bg-gray-700 text-blue-600 dark:text-white border border-blue-200 dark:border-gray-600 px-6 py-2 rounded-lg font-medium transition-colors duration-300"
+              className="inline-block bg-blue-50 dark:bg-gray-700 text-blue-600 dark:text-white border border-blue-200 dark:border-gray-600 px-6 py-2 rounded-lg font-medium transition-colors "
             >
              View My Resume
             </motion.a>
@@ -185,7 +185,7 @@ const Contact = () => {
                               initial="hidden"
                               animate="show"
                               whileHover={{ scale: 1.3, rotate: 5 }}
-                              className="text-gray-600 dark:text-gray-300 hover:text-blue-500 dark:hover:text-white transition duration-300 text-xl border p-3 rounded-full shadow-md"
+                              className="text-gray-600 dark:text-gray-300 hover:text-blue-500 dark:hover:text-white transition  text-xl border p-3 rounded-full shadow-md"
                             >
                               <Icon />
                             </motion.a>
@@ -194,10 +194,7 @@ const Contact = () => {
           </div>
         </motion.div>
 
-        <footer className="mt-16 text-center text-sm text-gray-500 dark:text-gray-400">
-          <hr className="border-gray-300 dark:border-gray-700 my-6 mx-auto w-1/2" />
-          <p>&copy; {new Date().getFullYear()} Trisan Jae. All rights reserved.</p>
-        </footer>
+ 
       </div>
     </section>
   );

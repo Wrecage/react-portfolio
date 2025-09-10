@@ -11,7 +11,7 @@ type Props = SkillCategoryType;
 const SkillCategory: FC<Props> = ({ title, skills }) => {
   return (
   <motion.div
-    className=" dark:from-slate-500 dark:to-slate-700 text-black dark:text-white rounded-2xl p-4 w-full sm:w-[300px] h-[320px] flex flex-col justify-between  transition duration-300 hover:scale-[1.03]"
+    className=" dark:from-slate-500 dark:to-slate-700 text-black dark:text-white rounded-2xl p-4 w-full sm:w-[300px] h-[320px] flex flex-col justify-between  transition  hover:scale-[1.03]"
     initial={{ opacity: 0, y: 50 }}
     animate={{ opacity: 1, y: 0 }}
     transition={{ duration: 0.6 }}

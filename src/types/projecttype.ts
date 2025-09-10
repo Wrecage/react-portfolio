@@ -14,6 +14,7 @@ export interface Project  {
   techStack: TechStackItem[];
   github?: string;
   demo?: string;
+  proto?: string;
   video?: string;
   screenshots?: string[];
 }

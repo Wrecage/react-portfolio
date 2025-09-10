@@ -28,6 +28,8 @@ export const projects: Project[] = [
       { icon: SiMeta, name: "Meta Graph API"},
       { icon: GroqIcon , name: "Groq" },
     ],
+    github: "https://github.com/Wrecage/SocialSphere",
+    demo: "https://socialsphere.pythonanywhere.com/",
     video: "https://www.youtube.com/embed/jqyvy7Xofgg?si=dxfe8QIofUoxK5Qt",
     screenshots: [
       "SocialSphere/SocialSphere (1).png",
@@ -61,6 +63,8 @@ export const projects: Project[] = [
       { icon: DiSqllite, name: "Sqlite"},
       { icon: SiLanguagetool, name: "Languange Tool API" },
     ],
+    github: "https://github.com/Wrecage/ProDigi",
+    demo: "https://systemintegration.pythonanywhere.com/",
     video: "https://www.youtube.com/embed/k55jYfu8d5o?si=nY9yTqov7C9oVjsx",
     screenshots: [
       "ProDigi/Prodigi  (1).png",
@@ -80,7 +84,7 @@ export const projects: Project[] = [
   {
     title: "Reflect Daily",
     type: "Academic Project",
-    role: "Fullstack Developer",
+    role: "Backend Developer",
     description:
       "A guided self-reflection app featuring inspirational quotes and insightful visual dashboards to track personal growth.",
     techStack: [
@@ -90,11 +94,12 @@ export const projects: Project[] = [
       { icon: SiMysql, name: "MySQL" },
 
     ],
+    // github: "https://github.com/Wrecage",
+    // demo: "https://www.youtube.com/@cittupage",
     screenshots: [
       "ReflectDaily/ReflectDaily  (1).png",
       "ReflectDaily/ReflectDaily  (2).png",
       "ReflectDaily/ReflectDaily  (3).png",
-      "ReflectDaily/ReflectDaily  (4).png",
       "ReflectDaily/ReflectDaily  (5).png",
       "ReflectDaily/ReflectDaily  (6).png",
       "ReflectDaily/ReflectDaily  (7).png",
@@ -113,6 +118,7 @@ export const projects: Project[] = [
     techStack: [
       { icon: SiFigma, name: "Figma" },
     ],
+    demo: "https://www.figma.com/design/EAlZdgZL1v8510yfwxAVEr/Internship-projects?node-id=2-2&t=kMH4NU0gI1saIBPe-1",
     screenshots: [
       "Figma/Recruitment/Recruitment (1).png",
       "Figma/Recruitment/Recruitment (2).png",
@@ -133,6 +139,8 @@ export const projects: Project[] = [
     techStack: [
       { icon: SiFigma, name: "Figma" },
     ],
+    demo: "https://www.figma.com/design/EAlZdgZL1v8510yfwxAVEr/Internship-projects?node-id=6-24982&t=kMH4NU0gI1saIBPe-1",
+    proto: "https://www.figma.com/proto/EAlZdgZL1v8510yfwxAVEr/Internship-projects?node-id=6-24982&t=YnIvMLHUIpJdLgid-1&scaling=scale-down&content-scaling=fixed&page-id=0%3A1&starting-point-node-id=40%3A15149",
     screenshots: [
       "Figma/Realty Website Design.png",
     ],
@@ -146,6 +154,8 @@ export const projects: Project[] = [
     techStack: [
       { icon: SiFigma, name: "Figma" },
     ],
+    demo: "https://www.figma.com/design/EAlZdgZL1v8510yfwxAVEr/Internship-projects?node-id=40-14485&t=YA9xVktLFuRb7tMe-1",
+    proto: "https://www.figma.com/proto/EAlZdgZL1v8510yfwxAVEr/Internship-projects?node-id=40-14485&t=opPCRHYDffXpdOr0-1&scaling=scale-down&content-scaling=fixed&page-id=0%3A1",
     screenshots: [
       "Figma/Landing Page design system.png",
     ],

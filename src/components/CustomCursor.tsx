@@ -1,120 +1,134 @@
-import { useEffect, useState, useCallback, useMemo } from "react";
-import { motion } from "framer-motion";
+"use client"
 
-interface TrailParticle {
-  id: string;
-  x: number;
-  y: number;
-  scale: number;
-  opacity: number;
-  color: string;
+import { useEffect, useState, useCallback } from "react"
+import { motion } from "framer-motion"
+
+interface RippleEffect {
+  id: string
+  x: number
+  y: number
+  scale: number
+  opacity: number
 }
 
 const CustomCursor = () => {
-  const [position, setPosition] = useState({ x: 0, y: 0 });
-  const [isVisible, setIsVisible] = useState(true);
-  const [trail, setTrail] = useState<TrailParticle[]>([]);
+  const [position, setPosition] = useState({ x: 0, y: 0 })
+  const [isVisible, setIsVisible] = useState(true)
+  const [ripples, setRipples] = useState<RippleEffect[]>([])
+  const [isPressed, setIsPressed] = useState(false)
 
-  const colors = useMemo(() => ["#ec4899", "#9333ea", "#3b82f6", "#facc15", "#22d3ee"], []);
+  const createRipple = useCallback((x: number, y: number) => {
+    const newRipple: RippleEffect = {
+      id: `${Date.now()}-${Math.random()}`,
+      x,
+      y,
+      scale: 0,
+      opacity: 1,
+    }
 
-  const gradientStyle = useMemo(() => ({
-    background: "linear-gradient(135deg, #ec4899, #9333ea, #3b82f6)",
-    backgroundSize: "200% 200%",
-    boxShadow: "0 0 20px rgba(236, 72, 153, 0.7), 0 0 40px rgba(147, 51, 234, 0.6), 0 0 60px rgba(59, 130, 246, 0.5)",
-  }), []);
-
-  const generateTrail = useCallback((x: number, y: number) => {
-    setTrail((prev) => {
-      if (prev.length > 40) return prev.slice(-40); // Limits particles to 40 max
-
-      const newParticle = {
-        id: `${Date.now()}-${Math.random()}`, // Guarantees unique key
-        x: x + (Math.random() - 0.5) * 20,
-        y: y + (Math.random() - 0.5) * 20,
-        scale: Math.random() * 1 + 0.5,
-        opacity: 1,
-        color: colors[Math.floor(Math.random() * colors.length)],
-      };
-      return [...prev, newParticle];
-    });
-  }, [colors]);
+    setRipples((prev) => {
+      // Limit to 8 ripples for performance
+      const filtered = prev.filter((ripple) => ripple.opacity > 0.1)
+      return [...filtered.slice(-7), newRipple]
+    })
+  }, [])
 
   useEffect(() => {
-    let animationFrameId: number;
-    let lastTime = 0;
+    let animationFrameId: number
+    let lastTime = 0
 
     const handleMouseMove = (e: MouseEvent) => {
-      const now = Date.now();
-      if (now - lastTime < 16) return; // Limits updates to ~60fps
-      lastTime = now;
+      const now = Date.now()
+      if (now - lastTime < 16) return // 60fps throttle
+      lastTime = now
 
-      setPosition({ x: e.clientX, y: e.clientY });
-      generateTrail(e.clientX, e.clientY);
-    };
+      setPosition({ x: e.clientX, y: e.clientY })
 
-    const animateTrail = () => {
-      setTrail((prev) =>
-        prev.map((particle) => ({
-          ...particle,
-          opacity: Math.max(0, particle.opacity - 0.07),
-          scale: particle.scale * 0.94,
-          y: particle.y - 2, // Makes particles rise like fireworks
-        })).filter((particle) => particle.opacity > 0)
-      );
-      animationFrameId = requestAnimationFrame(animateTrail);
-    };
+      // Create ripple effect on movement
+      if (Math.random() > 0.7) {
+        // 30% chance for performance
+        createRipple(e.clientX, e.clientY)
+      }
+    }
 
-    document.addEventListener("mousemove", handleMouseMove);
-    document.addEventListener("mouseenter", () => setIsVisible(true));
-    document.addEventListener("mouseleave", () => setIsVisible(false));
-    document.body.style.cursor = "none"; // Hide system cursor
+    const handleMouseDown = () => {
+      setIsPressed(true)
+      createRipple(position.x, position.y)
+    }
 
-    animationFrameId = requestAnimationFrame(animateTrail);
+    const handleMouseUp = () => {
+      setIsPressed(false)
+    }
+
+    const animateRipples = () => {
+      setRipples((prev) =>
+        prev
+          .map((ripple) => ({
+            ...ripple,
+            scale: Math.min(ripple.scale + 0.8, 50),
+            opacity: Math.max(0, ripple.opacity - 0.02),
+          }))
+          .filter((ripple) => ripple.opacity > 0),
+      )
+      animationFrameId = requestAnimationFrame(animateRipples)
+    }
+
+    document.addEventListener("mousemove", handleMouseMove)
+    document.addEventListener("mousedown", handleMouseDown)
+    document.addEventListener("mouseup", handleMouseUp)
+    document.addEventListener("mouseenter", () => setIsVisible(true))
+    document.addEventListener("mouseleave", () => setIsVisible(false))
+    document.body.style.cursor = "none"
+
+    animationFrameId = requestAnimationFrame(animateRipples)
 
     return () => {
-      document.removeEventListener("mousemove", handleMouseMove);
-      document.body.style.cursor = "auto";
-      cancelAnimationFrame(animationFrameId);
-    };
-  }, [generateTrail]);
+      document.removeEventListener("mousemove", handleMouseMove)
+      document.removeEventListener("mousedown", handleMouseDown)
+      document.removeEventListener("mouseup", handleMouseUp)
+      document.body.style.cursor = "auto"
+      cancelAnimationFrame(animationFrameId)
+    }
+  }, [createRipple, position.x, position.y])
 
-  if (!isVisible) return null;
+  if (!isVisible) return null
 
   return (
     <>
-      {/* Custom Cursor */}
+      {/* Main Cursor */}
       <motion.div
         className="fixed top-0 left-0 pointer-events-none z-[9999] rounded-full"
-        style={{ x: position.x - 12, y: position.y - 12 }}
-        animate={{ scale: [1, 1.4, 1] }}
-        transition={{ duration: 2, repeat: Infinity, ease: "easeInOut" }}
+        style={{ x: position.x - 8, y: position.y - 8 }}
+        animate={{
+          scale: isPressed ? 1.5 : 1,
+          rotate: 360,
+        }}
+        transition={{
+          scale: { duration: 0.1 },
+          rotate: { duration: 4, repeat: Number.POSITIVE_INFINITY, ease: "linear" },
+        }}
       >
-        <motion.div
-          className="w-6 h-6 rounded-full absolute inset-0"
-          style={gradientStyle}
-          animate={{ rotate: 360, backgroundPosition: ["0% 50%", "100% 50%", "0% 50%"] }}
-          transition={{
-            rotate: { duration: 3, repeat: Infinity, ease: "linear" },
-            backgroundPosition: { duration: 2, repeat: Infinity, ease: "easeInOut" },
-          }}
-        />
-        <div className="absolute inset-1 rounded-full bg-white/20 backdrop-blur-md" />
+        <div className="w-4 h-4 rounded-full bg-gradient-to-br from-blue-400 via-purple-500 to-pink-400 shadow-lg" />
+        <div className="absolute inset-0.5 rounded-full bg-white/30 backdrop-blur-sm" />
       </motion.div>
 
-      {/* Firework-Inspired Trail Effect */}
-      {trail.map((particle) => (
+      {/* Sequin-like Ripple Effects */}
+      {ripples.map((ripple) => (
         <motion.div
-          key={particle.id}
-          className="fixed top-0 left-0 pointer-events-none"
-          style={{ x: particle.x, y: particle.y }}
-          animate={{ opacity: [1, 0], scale: [particle.scale, 0] }}
-          transition={{ duration: 0.8, ease: "easeOut" }}
-        >
-          <div className="w-2 h-2 rounded-full" style={{ backgroundColor: particle.color, filter: "blur(3px)" }} />
-        </motion.div>
+          key={ripple.id}
+          className="fixed top-0 left-0 pointer-events-none rounded-full border-2 border-blue-400/30"
+          style={{
+            x: ripple.x - ripple.scale / 2,
+            y: ripple.y - ripple.scale / 2,
+            width: ripple.scale,
+            height: ripple.scale,
+            opacity: ripple.opacity,
+            background: `radial-gradient(circle, rgba(59, 130, 246, ${ripple.opacity * 0.1}) 0%, transparent 70%)`,
+          }}
+        />
       ))}
     </>
-  );
-};
+  )
+}
 
-export default CustomCursor;
+export default CustomCursor

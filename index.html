@@ -1,8 +1,20 @@
 <!doctype html>
 <html lang="en">
   <head>
+    <script>
+      (function() {
+        try {
+          var theme = localStorage.getItem('theme');
+          if (theme === 'dark' || (!theme && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+            document.documentElement.classList.add('dark');
+          } else {
+            document.documentElement.classList.add('light');
+          }
+        } catch (e) {}
+      })();
+    </script>
     <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="https://pixcap.com/cdn/library/template/1722618340588/thumbnail/Long_T_Shirt_Boy_3D_Model_transparent_emp_800.webp" />
+    <link rel="icon" type="image/svg+xml" href="https://cdn3d.iconscout.com/3d/premium/thumb/man-with-green-beanie-3d-icon-png-download-10394182.png" />
     <link href="/src/index.css" rel="stylesheet">
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>My Portfolio</title>

@@ -143,7 +143,7 @@ const handleDownload = () => {
               }}
               whileTap={{ scale: 0.97 }}
               transition={{ type: "spring", stiffness: 500, damping: 40 }}
-              className="bg-gradient-to-r from-pink-500 via-purple-500 to-blue-500 text-white font-semibold px-6 py-2 rounded-lg shadow-md transition duration-300 hover:bg-gradient-to-r hover:from-purple-500 hover:via-blue-500 hover:to-indigo-500"
+              className="bg-gradient-to-r from-pink-500 via-purple-500 to-blue-500 text-white font-semibold px-6 py-2 rounded-lg shadow-md transition  hover:bg-gradient-to-r hover:from-purple-500 hover:via-blue-500 hover:to-indigo-500"
             >
               View My Resume
             </motion.a>
@@ -158,7 +158,7 @@ const handleDownload = () => {
               }}
               whileTap={{ scale: 0.97 }}
               transition={{ type: "spring", stiffness: 500, damping: 20 }} // More responsive bounce
-              className="bg-gradient-to-r from-pink-500 via-yellow-500 to-yellow-400 text-white font-semibold px-6 py-2 rounded-lg shadow-md transition duration-200 hover:bg-gradient-to-r hover:from-pink-600 hover:via-yellow-600 hover:to-yellow-500"
+              className="bg-gradient-to-r from-pink-500 via-yellow-500 to-yellow-400 text-white font-semibold px-6 py-2 rounded-lg shadow-md transition  hover:bg-gradient-to-r hover:from-pink-600 hover:via-yellow-600 hover:to-yellow-500"
             >
               {isLoading ? "Downloading..." : "Download Resume"}
             </motion.button>
@@ -175,7 +175,7 @@ const handleDownload = () => {
                 custom={index}
                 variants={iconVariants}
                 whileHover={{ scale: 1.3, rotate: 5 }}
-                className="text-gray-600 dark:text-gray-300 hover:text-blue-500 dark:hover:text-white transition duration-300 text-xl border p-3 rounded-full shadow-md"
+                className="text-gray-600 dark:text-gray-300 hover:text-blue-500 dark:hover:text-white transition  text-xl border p-3 rounded-full shadow-md"
               >
                 <Icon />
               </motion.a>

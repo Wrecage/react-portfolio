@@ -1,28 +1,32 @@
 import {
-  FaReact, FaHtml5, FaCss3Alt, FaJsSquare, FaPython, FaJava, FaGithub,FaFileWord, FaFileExcel, FaFilePowerpoint
+  FaReact, FaHtml5, FaCss3Alt, FaPython, FaGithub,
+  FaFileWord, FaFileExcel, FaFilePowerpoint
 } from "react-icons/fa";
+
 import {
-  SiTailwindcss, SiDjango, SiSpringboot, SiMysql,
-  SiPostgresql, SiEclipseide, SiVite, SiFigma, SiTypescript,
-  SiRender, SiVercel, SiHeroku, SiJira, SiClickup, SiTrello, SiMeta,
-  SiPythonanywhere, SiRailway, SiLanguagetool 
+  SiTailwindcss, SiDjango, SiMysql, SiPostgresql,
+  SiEclipseide, SiVite, SiFigma, SiTypescript,
+  SiRender, SiVercel, SiHeroku, SiJira, SiClickup,
+  SiTrello, SiMeta, SiPythonanywhere, SiRailway,
+  SiLanguagetool, SiNextdotjs, SiSupabase, SiExpress
 } from "react-icons/si";
 
 import { VscVscode } from "react-icons/vsc";
-
 import { DiSqllite } from "react-icons/di";
-import { BiLogoFlask } from "react-icons/bi";
+// import { BiLogoFlask } from "react-icons/bi";
 import type { SkillCategory } from "@/types/skilltypes";
+import { FaNodeJs } from "react-icons/fa6";
 
 export const skillCategories: SkillCategory[] = [
   {
     title: "Frontend",
     skills: [
-      { name: "React", icon: <FaReact />, style: { color: "#61DAFB" } },
       { name: "HTML", icon: <FaHtml5 />, style: { color: "#E34F26" } },
       { name: "CSS", icon: <FaCss3Alt />, style: { color: "#1572B6" } },
-      { name: "JavaScript", icon: <FaJsSquare />, style: { color: "#F7DF1E" } },
+      // { name: "JavaScript", icon: <FaJsSquare />, style: { color: "#F7DF1E" } },
       { name: "TypeScript", icon: <SiTypescript />, style: { color: "#3178C6" } },
+      { name: "React", icon: <FaReact />, style: { color: "#61DAFB" } },
+      { name: "Next.js", icon: <SiNextdotjs />, style: { color: "#000000" } },
       { name: "Tailwind", icon: <SiTailwindcss />, style: { color: "#38B2AC" } },
     ],
   },
@@ -30,10 +34,12 @@ export const skillCategories: SkillCategory[] = [
     title: "Backend",
     skills: [
       { name: "Python", icon: <FaPython />, style: { color: "#3776AB" } },
-      { name: "Java", icon: <FaJava />, style: { color: "#007396" } },
+      // { name: "Java", icon: <FaJava />, style: { color: "#007396" } },
       { name: "Django", icon: <SiDjango />, style: { color: "#092E20" } },
-      { name: "Spring Boot", icon: <SiSpringboot />, style: { color: "#6DB33F" } },
-      { name: "Flask", icon: <BiLogoFlask />, style: { color: "#000000" } },
+      // { name: "Spring Boot", icon: <SiSpringboot />, style: { color: "#6DB33F" } },
+      // { name: "Flask", icon: <BiLogoFlask />, style: { color: "#000000" } },
+      { name: "Node.js", icon: <FaNodeJs />, style: { color: "#339933" } },
+      { name: "Express.js", icon: <SiExpress />, style: { color: "#000000" } },
     ],
   },
   {
@@ -52,7 +58,6 @@ export const skillCategories: SkillCategory[] = [
       { name: "Vite", icon: <SiVite />, style: { color: "#646CFF" } },
       { name: "Eclipse", icon: <SiEclipseide />, style: { color: "#2C2255" } },
       { name: "Vscode", icon: <VscVscode />, style: { color: "#0079BA" } },
-
     ],
   },
   {
@@ -63,14 +68,15 @@ export const skillCategories: SkillCategory[] = [
       { name: "Vercel", icon: <SiVercel />, style: { color: "#000000" } },
       { name: "Heroku", icon: <SiHeroku />, style: { color: "#430098" } },
       { name: "PythonAnywhere", icon: <SiPythonanywhere />, style: { color: "#306998" } },
+      { name: "Supabase", icon: <SiSupabase />, style: { color: "#3ECF8E" } },
     ],
   },
   {
     title: "Productivity Tools",
     skills: [
-  { name: "Microsoft Word", icon: <FaFileWord />, colorClass: "text-blue-800" },
-  { name: "Excel", icon: <FaFileExcel />, colorClass: "text-green-600" },
-  { name: "PowerPoint", icon: <FaFilePowerpoint />, colorClass: "text-orange-500" },
+      { name: "Microsoft Word", icon: <FaFileWord />, colorClass: "text-blue-800" },
+      { name: "Excel", icon: <FaFileExcel />, colorClass: "text-green-600" },
+      { name: "PowerPoint", icon: <FaFilePowerpoint />, colorClass: "text-orange-500" },
     ],
   },
   {
@@ -85,8 +91,8 @@ export const skillCategories: SkillCategory[] = [
     title: "APIs & Integrations",
     skills: [
       { name: "Meta Graph API", icon: <SiMeta />, style: { color: "#4267B2" } },
-      { name: "LanguageTool API", icon: <SiLanguagetool />, style: { color: "#2C2C2C" } }, 
-      { name: "Groq API", icon: <img src="groq.svg" alt="Groq" className="w-6 h-6" />,},
+      { name: "LanguageTool API", icon: <SiLanguagetool />, style: { color: "#2C2C2C" } },
+      { name: "Groq API", icon: <img src="groq.svg" alt="Groq" className="w-8 h-8" /> },
     ],
   },
 ];

@@ -7,6 +7,7 @@ import Contact from './pages/Contact';
 import CustomCursor from "./components/CustomCursor";
 import ScrollProgress from "./components/ScrollProgress";
 import MorphingBackground from "./components/MorphingBackground";
+import Footer from './components/Footer';
 
 
 function App() {
@@ -16,7 +17,7 @@ function App() {
       <ScrollProgress />
       <Router>
         <div className="min-h-screen text-[var(--color-content)] bg-[var(--color-background)]
-          border border-[var(--color-muted)] shadow-md dark:shadow-[0_0_30px_#1e29">
+           border-[var(--color-muted)] shadow-md dark:shadow-[0_0_30px_#1e29">
           <MorphingBackground />
           <Navbar />
           <main>
@@ -34,6 +35,7 @@ function App() {
               <Contact />
             </section>
           </main>
+          <Footer />
         </div>
       </Router>
     </>
