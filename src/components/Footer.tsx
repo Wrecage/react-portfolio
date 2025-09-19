@@ -1,5 +1,5 @@
 import type React from "react"
-import { Github, Linkedin, Mail, Heart, ArrowUp } from "lucide-react"
+import { Github, Linkedin, Mail, ArrowUp } from "lucide-react"
 import { Link } from "react-scroll"
 
 const Footer: React.FC = () => {
@@ -88,9 +88,9 @@ const Footer: React.FC = () => {
         {/* Bottom Section */}
         <div className="mt-12 pt-8 border-t border-gray-200/30 dark:border-gray-700/30 flex flex-col sm:flex-row justify-between items-center space-y-4 sm:space-y-0">
           <div className="flex items-center space-x-2 text-sm text-gray-500 dark:text-gray-400">
-            <span>&copy; {currentYear} Trisan Jae. Made with</span>
-            <Heart className="w-4 h-4 text-red-500 animate-pulse" />
-            <span>and lots of coffee</span>
+            <span>&copy; {currentYear} Trisan Jae Españo</span>
+            {/* <Heart className="w-4 h-4 text-red-500 animate-pulse" />
+            <span>and lots of coffee</span> */}
           </div>
           
           <button
